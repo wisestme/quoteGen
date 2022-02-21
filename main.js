@@ -1,10 +1,17 @@
 let apiQuotes = []
+let currentQuote = document.getElementById('quote');
+let currentAuthor = document.getElementById('author');
 
 // Show New Quote
 function newQuote() {
   // Pick a random quote from apiQuotes array
   quote = apiQuotes[Math.floor(Math.random() * apiQuotes.length)];
-  console.log(quote);
+  setQuote();
+}
+
+function setQuote() {
+  currentQuote.innerText = quote.text;
+  currentAuthor.innerText = quote.author;
 }
 // Get Quotes from API
 async function getQuotes () {
