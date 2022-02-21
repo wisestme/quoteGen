@@ -1,6 +1,7 @@
 let apiQuotes = []
 let currentQuote = document.getElementById('quote');
 let currentAuthor = document.getElementById('author');
+const newQuoteButton = document.getElementById('new_quote');
 
 // Show New Quote
 function newQuote() {
@@ -25,5 +26,5 @@ async function getQuotes () {
   }
 }
 
-// On Load
-getQuotes();
+// Event listeners
+newQuoteButton.addEventListener('click', getQuotes);
