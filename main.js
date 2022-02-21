@@ -12,7 +12,10 @@ function newQuote() {
 
 function setQuote() {
   currentQuote.innerText = quote.text;
-  currentAuthor.innerText = quote.author;
+  // check for null
+  quote.author ?
+  currentAuthor.innerText = quote.author :
+  currentAuthor.innerText = 'Unknown';
 }
 // Get Quotes from API
 async function getQuotes () {
