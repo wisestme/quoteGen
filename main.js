@@ -8,6 +8,7 @@ function newQuote() {
   // Pick a random quote from apiQuotes array
   quote = apiQuotes[Math.floor(Math.random() * apiQuotes.length)];
   setQuote();
+  checkQuoteLength();
 }
 
 function setQuote() {
@@ -19,9 +20,12 @@ function setQuote() {
 }
 
 // Check quote length
-quote.text.length > 50 ?
-currentQuote.classList.add('long_quote') :
-currentQuote.classList.remove('long_quote');
+function checkQuoteLength() {
+  quote.text.length > 50 ?
+  currentQuote.classList.add('long_quote') :
+  currentQuote.classList.remove('long_quote');
+}
+
 
 // Get Quotes from API
 async function getQuotes () {
