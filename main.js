@@ -17,6 +17,12 @@ function setQuote() {
   currentAuthor.innerText = quote.author :
   currentAuthor.innerText = 'Unknown';
 }
+
+// Check quote length
+quote.text.length > 50 ?
+currentQuote.classList.add('long_quote') :
+currentQuote.classList.remove('long_quote');
+
 // Get Quotes from API
 async function getQuotes () {
   const apiUrl = 'https://type.fit/api/quotes';
