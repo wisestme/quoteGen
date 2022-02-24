@@ -2,6 +2,7 @@ let apiQuotes = []
 let currentQuote = document.getElementById('quote');
 let currentAuthor = document.getElementById('author');
 const newQuoteButton = document.getElementById('new_quote');
+const tweetButton = document.getElementById('twitter');
 
 // Show New Quote
 function newQuote() {
@@ -39,5 +40,12 @@ async function getQuotes () {
   }
 }
 
+// Tweet Quote
+function tweetQuote () {
+  const twitterUrl = `https://twitter.com/intent/tweet?text=${currentQuote.textContent} - ${currentAuthor}`;
+  window.open(twitterUrl, '_blank');
+}
+
 // Event listeners
 newQuoteButton.addEventListener('click', getQuotes);
+tweetButton.addEventListener('click', tweetQuote);
