@@ -6,9 +6,16 @@ const tweetButton = document.getElementById('twitter');
 const loader = document.getElementById('loader');
 const quoteContainer = document.getElementById('quote_container');
 
+// Show loading
 function loading () {
   loader.hidden = false;
   quoteContainer.hidden = true;
+}
+
+// Hide loading
+function complete () {
+  quoteContainer.hidden = false;
+  loader.hidden = true;
 }
 
 // Show New Quote
