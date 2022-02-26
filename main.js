@@ -3,6 +3,13 @@ let currentQuote = document.getElementById('quote');
 let currentAuthor = document.getElementById('author');
 const newQuoteButton = document.getElementById('new_quote');
 const tweetButton = document.getElementById('twitter');
+const loader = document.getElementById('loader');
+const quoteContainer = document.getElementById('quote_container');
+
+function loading () {
+  loader.hidden = false;
+  quoteContainer.hidden = true;
+}
 
 // Show New Quote
 function newQuote() {
