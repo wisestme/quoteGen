@@ -8,25 +8,32 @@ const quoteContainer = document.getElementById('quote_container');
 
 // Show loading
 function loading () {
+  loader.style.display = 'block';
   loader.hidden = false;
   quoteContainer.hidden = true;
 }
 
 // Hide loading
 function complete () {
+  loader.style.display = 'none';
   quoteContainer.hidden = false;
   loader.hidden = true;
 }
 
 // Show New Quote
 function newQuote() {
+  loading();
   // Pick a random quote from apiQuotes array
   quote = apiQuotes[Math.floor(Math.random() * apiQuotes.length)];
+
+  // Set quote, Hide loader
   setQuote();
   checkQuoteLength();
+  complete();
 }
 
 function setQuote() {
+
   currentQuote.innerText = quote.text;
   // check for null
   quote.author ?
@@ -44,6 +51,7 @@ function checkQuoteLength() {
 
 // Get Quotes from API
 async function getQuotes () {
+  loading();
   const apiUrl = 'https://type.fit/api/quotes';
   try {
     const response = await fetch(apiUrl);
